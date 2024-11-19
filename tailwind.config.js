@@ -41,6 +41,9 @@ export default {
           250: 'rgb(250, 250, 250)',
         },
       },
+      backgroundImage: {
+        intro1: "url('/src/assets/images/intro1.jpeg')",
+      },
     },
   },
   plugins: [
