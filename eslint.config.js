@@ -19,10 +19,9 @@ export default tseslint.config(
     },
     rules: {
       ...reactHooks.configs.recommended.rules,
-      'react-refresh/only-export-components': [
-        'warn',
-        { allowConstantExport: true },
-      ],
+      'react-refresh/only-export-components': ['warn', { allowConstantExport: true }],
+      'no-unused-vars': 'off', // 일반 eslint 대신 typescript-eslint 사용
+      '@typescript-eslint/no-unused-vars': 'warn',
     },
   },
 )
