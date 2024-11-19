@@ -42,7 +42,7 @@ export default {
         },
       },
       backgroundImage: {
-        intro1: "url('/src/assets/images/intro1.jpeg')",
+        intro1: "url('/src/img/assets/intro1.jpeg')",
       },
     },
   },
@@ -50,10 +50,39 @@ export default {
     function ({ addComponents }) {
       addComponents({
         '.my-container': {
+          width: '1200px',
+          margin: '0 auto',
           '@media (max-width: 1199px)': {
             width: '100%',
-            paddingLeft: '15px',
-            paddingRight: '15px',
+            padding: '0 15px',
+          },
+        },
+
+        '.my-section': {
+          padding: '140px 0',
+          '@media (max-width: 767px)': {
+            padding: '70px 0',
+          },
+        },
+
+        '.my-main-title': {
+          fontSize: '3em',
+          lineHeight: '1.4em',
+          fontWeight: '700',
+          '@media (max-width: 767px)': {
+            fontSize: '1.6em',
+          },
+        },
+
+        '.my-sub-title': {
+          marginBottom: '100px',
+          fontWeight: 300,
+          // 주의: bg-gray-136으로 작성 불가
+          color: '#888',
+          lineHeight: '1.6em',
+          '@media (max-width: 767px)': {
+            marginBottom: '50px',
+            fontSize: '1em',
           },
         },
       })
