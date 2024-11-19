@@ -4,8 +4,12 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: ' rgb(0, 137, 248)',
+        // #0089f8
+        primary: 'rgb(0, 137, 248)',
+
+        // #19598d
         secondary: 'rgb(25, 89, 141)',
+
         gray: {
           // #2c2c2c
           44: 'rgb(44, 44, 44)',
@@ -83,6 +87,42 @@ export default {
           '@media (max-width: 767px)': {
             marginBottom: '50px',
             fontSize: '1em',
+          },
+        },
+
+        '.my-icon-set': {
+          display: 'flex',
+
+          '@media (max-width: 767px)': {
+            flexWrap: 'wrap',
+            marginTop: '-40px',
+          },
+          '> div': {
+            flex: '1',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+
+            '@media (max-width: 767px)': {
+              flex: 'auto',
+              width: '50%',
+              marginTop: '40px',
+            },
+
+            '.icon': {
+              width: '114px',
+              height: '114px',
+              backgroundSize: 'contain',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat',
+              marginBottom: '20px',
+
+              '@media (max-width: 767px)': {
+                width: '60px',
+                height: '60px',
+              },
+            },
           },
         },
       })
