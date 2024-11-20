@@ -83,16 +83,9 @@ export default function Section300() {
 
               {/* <div className="thumbs flex flex-wrap mt-[-35px]"></div> */}
               <div className="thumbs grid grid-cols-9 mt-[-35px] max-md:grid-cols-3">
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
-                <Thumb description="성형외과" imageUrl="https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg" />
+                {data.map((item, index) => (
+                  <Thumb key={index} {...item} />
+                ))}
               </div>
             </div>
           </div>
@@ -110,3 +103,33 @@ function Thumb({ description, imageUrl }: { description: string; imageUrl: strin
     </div>
   )
 }
+
+const data: { description: string; imageUrl: string }[] = [
+  { description: '성형외과', imageUrl: 'https://pay2pos.com/img/assets/s300-3/1-300x300.jpeg' },
+  { description: '피부과', imageUrl: 'https://pay2pos.com/img/assets/s300-3/2-300x300.jpeg' },
+  { description: '미용실', imageUrl: 'https://pay2pos.com/img/assets/s300-3/3-300x300.jpeg' },
+  { description: '피부관리실', imageUrl: 'https://pay2pos.com/img/assets/s300-3/4-300x300.jpeg' },
+  { description: '마사지샵', imageUrl: 'https://pay2pos.com/img/assets/s300-3/5-300x300.jpeg' },
+  { description: '두피 관리샵', imageUrl: 'https://pay2pos.com/img/assets/s300-3/6-300x300.jpeg' },
+  { description: '염색 전문점', imageUrl: 'https://pay2pos.com/img/assets/s300-3/7-300x300.jpeg' },
+  { description: '네일아트', imageUrl: 'https://pay2pos.com/img/assets/s300-3/8-300x300.jpeg' },
+  { description: '요가강사', imageUrl: 'https://pay2pos.com/img/assets/s300-3/9-300x300.jpeg' },
+  { description: '헬스 트레이너', imageUrl: 'https://pay2pos.com/img/assets/s300-3/10-300x300.jpeg' },
+  { description: '애견샵', imageUrl: 'https://pay2pos.com/img/assets/s300-3/11-300x300.jpeg' },
+  { description: '왁싱샵', imageUrl: 'https://pay2pos.com/img/assets/s300-3/12-300x300.jpeg' },
+  { description: '타투 전문점', imageUrl: 'https://pay2pos.com/img/assets/s300-3/13-300x300.jpeg' },
+  { description: '휘트니스 센터', imageUrl: 'https://pay2pos.com/img/assets/s300-3/14-300x300.jpeg' },
+  { description: '학원', imageUrl: 'https://pay2pos.com/img/assets/s300-3/15-300x300.jpeg' },
+  { description: '프리랜서', imageUrl: 'https://pay2pos.com/img/assets/s300-3/16-300x300.jpeg' },
+  { description: '개인 서비스업', imageUrl: 'https://pay2pos.com/img/assets/s300-3/17-300x300.jpeg' },
+  { description: '온라인 쇼핑몰', imageUrl: 'https://pay2pos.com/img/assets/s300-3/18-300x300.jpeg' },
+  { description: '월세 받는 임대주', imageUrl: 'https://pay2pos.com/img/assets/s300-3/19-300x300.jpeg' },
+  { description: '전통시장', imageUrl: 'https://pay2pos.com/img/assets/s300-3/20-300x300.jpeg' },
+  { description: '노점상', imageUrl: 'https://pay2pos.com/img/assets/s300-3/21-300x300.jpeg' },
+  { description: '푸드트럭', imageUrl: 'https://pay2pos.com/img/assets/s300-3/22-300x300.jpeg' },
+  { description: '방문판매', imageUrl: 'https://pay2pos.com/img/assets/s300-3/23-300x300.jpeg' },
+  { description: '방문학습지 교사', imageUrl: 'https://pay2pos.com/img/assets/s300-3/24-300x300.jpeg' },
+  { description: '수금용 도소매상', imageUrl: 'https://pay2pos.com/img/assets/s300-3/25-300x300.jpeg' },
+  { description: '뷰티샵', imageUrl: 'https://pay2pos.com/img/assets/s300-3/26-300x300.jpeg' },
+  { description: '모든 샵앤샵', imageUrl: 'https://pay2pos.com/img/assets/s300-3/27-300x300.jpeg' },
+]

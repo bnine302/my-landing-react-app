@@ -7,7 +7,7 @@ function App() {
     <div className="flex flex-col min-h-screen">
       <div className="flex-grow flex-shrink-0">
         {/* <Section /> */}
-        <Content1 />
+        {/* <Content1 /> */}
       </div>
       {/* <Footer /> */}
     </div>
