@@ -23,6 +23,9 @@ export default {
           // #666
           102: 'rgb(102, 102, 102)',
 
+          // #777
+          119: 'rgb(119, 119, 119)',
+
           // #7a7a7a
           122: 'rgb(122, 122, 122)',
 
@@ -79,13 +82,14 @@ export default {
         },
 
         '.my-sub-title': {
-          marginBottom: '100px',
           fontWeight: 300,
           // 주의: bg-gray-136으로 작성 불가
           color: '#888',
+          // marginBottom: '100px',
+          fontSize: '1.4em',
           lineHeight: '1.6em',
           '@media (max-width: 767px)': {
-            marginBottom: '50px',
+            // marginBottom: '50px',
             fontSize: '1em',
           },
         },
