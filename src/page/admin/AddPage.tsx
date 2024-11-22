@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { useMutation } from '@tanstack/react-query'
 import axios from 'axios'
+// import DOMPurify from 'dompurify'
 
 export default function AddPage() {
   const navigate = useNavigate()
@@ -13,6 +14,7 @@ export default function AddPage() {
     mutationFn: async (newContent: string) => {
       return axios.put('/api/datas/1', {
         dno: 1,
+        // content: DOMPurify.sanitize(newContent)
         content: newContent
       })
     },
@@ -27,7 +29,7 @@ export default function AddPage() {
   })
 
   const handleChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setContent(e.target.value)
+    setContent(e.target.value);
   }
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -56,8 +58,10 @@ export default function AddPage() {
       content: (
         <div 
           dangerouslySetInnerHTML={{ 
-            __html: content
+            __html: content // script 동작은 막지만, onclick 등 이벤트는 동작함
+            // __html: DOMPurify.sanitize(content) // link가 동작하지 않음
           }} 
+          className='p-4 border min-h-72' 
         />
       ),
     },
