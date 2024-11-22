@@ -1,57 +1,106 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+    darkMode: ['class'],
+    content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
-    extend: {
-      colors: {
-        // #0089f8
-        primary: 'rgb(0, 137, 248)',
-
-        // #19598d
-        secondary: 'rgb(25, 89, 141)',
-
-        gray: {
-          // #2c2c2c
-          44: 'rgb(44, 44, 44)',
-
-          // #333
-          51: 'rgb(51, 51, 51)',
-
-          // #444
-          68: 'rgb(68, 68, 68)',
-
-          // #666
-          102: 'rgb(102, 102, 102)',
-
-          // #777
-          119: 'rgb(119, 119, 119)',
-
-          // #7a7a7a
-          122: 'rgb(122, 122, 122)',
-
-          // #888
-          136: 'rgb(136, 136, 136)',
-
-          // #ccc
-          204: 'rgb(204, 204, 204)',
-
-          // #ddd
-          221: 'rgb(221, 221, 221)',
-
-          // #ededed
-          237: 'rgb(237, 237, 237)',
-
-          // #f1f1f1
-          241: 'rgb(241, 241, 241)',
-
-          // #fafafa
-          250: 'rgb(250, 250, 250)',
-        },
-      },
-      backgroundImage: {
-        intro1: "url('/src/img/assets/intro1.jpeg')",
-      },
-    },
+  	extend: {
+  		colors: {
+  			primary: {
+  				DEFAULT: 'hsl(var(--primary))',
+  				foreground: 'hsl(var(--primary-foreground))'
+  			},
+  			secondary: {
+  				DEFAULT: 'hsl(var(--secondary))',
+  				foreground: 'hsl(var(--secondary-foreground))'
+  			},
+  			gray: {
+  				'44': 'rgb(44, 44, 44)',
+  				'51': 'rgb(51, 51, 51)',
+  				'68': 'rgb(68, 68, 68)',
+  				'102': 'rgb(102, 102, 102)',
+  				'119': 'rgb(119, 119, 119)',
+  				'122': 'rgb(122, 122, 122)',
+  				'136': 'rgb(136, 136, 136)',
+  				'204': 'rgb(204, 204, 204)',
+  				'221': 'rgb(221, 221, 221)',
+  				'237': 'rgb(237, 237, 237)',
+  				'241': 'rgb(241, 241, 241)',
+  				'250': 'rgb(250, 250, 250)'
+  			},
+  			background: 'hsl(var(--background))',
+  			foreground: 'hsl(var(--foreground))',
+  			card: {
+  				DEFAULT: 'hsl(var(--card))',
+  				foreground: 'hsl(var(--card-foreground))'
+  			},
+  			popover: {
+  				DEFAULT: 'hsl(var(--popover))',
+  				foreground: 'hsl(var(--popover-foreground))'
+  			},
+  			muted: {
+  				DEFAULT: 'hsl(var(--muted))',
+  				foreground: 'hsl(var(--muted-foreground))'
+  			},
+  			accent: {
+  				DEFAULT: 'hsl(var(--accent))',
+  				foreground: 'hsl(var(--accent-foreground))'
+  			},
+  			destructive: {
+  				DEFAULT: 'hsl(var(--destructive))',
+  				foreground: 'hsl(var(--destructive-foreground))'
+  			},
+  			border: 'hsl(var(--border))',
+  			input: 'hsl(var(--input))',
+  			ring: 'hsl(var(--ring))',
+  			chart: {
+  				'1': 'hsl(var(--chart-1))',
+  				'2': 'hsl(var(--chart-2))',
+  				'3': 'hsl(var(--chart-3))',
+  				'4': 'hsl(var(--chart-4))',
+  				'5': 'hsl(var(--chart-5))'
+  			},
+  			sidebar: {
+  				DEFAULT: 'hsl(var(--sidebar-background))',
+  				foreground: 'hsl(var(--sidebar-foreground))',
+  				primary: 'hsl(var(--sidebar-primary))',
+  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+  				accent: 'hsl(var(--sidebar-accent))',
+  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+  				border: 'hsl(var(--sidebar-border))',
+  				ring: 'hsl(var(--sidebar-ring))'
+  			}
+  		},
+  		backgroundImage: {
+  			intro1: 'url("/src/img/assets/intro1.jpeg")'
+  		},
+  		borderRadius: {
+  			lg: 'var(--radius)',
+  			md: 'calc(var(--radius) - 2px)',
+  			sm: 'calc(var(--radius) - 4px)'
+  		},
+  		keyframes: {
+  			'accordion-down': {
+  				from: {
+  					height: '0'
+  				},
+  				to: {
+  					height: 'var(--radix-accordion-content-height)'
+  				}
+  			},
+  			'accordion-up': {
+  				from: {
+  					height: 'var(--radix-accordion-content-height)'
+  				},
+  				to: {
+  					height: '0'
+  				}
+  			}
+  		},
+  		animation: {
+  			'accordion-down': 'accordion-down 0.2s ease-out',
+  			'accordion-up': 'accordion-up 0.2s ease-out'
+  		}
+  	}
   },
   plugins: [
     function ({ addComponents }) {
@@ -131,5 +180,6 @@ export default {
         },
       })
     },
-  ],
+      require("tailwindcss-animate")
+],
 }
