@@ -3,9 +3,13 @@ import IndexPage from './page/admin/IndexPage'
 import AddPage from './page/admin/AddPage'
 import MainPage from './page/MainPage'
 import AdminLayout from './layout/AdminLayout'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
+
+const queryClient = new QueryClient();
 
 function App() {
   return (
+    <QueryClientProvider client={queryClient}>
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<MainPage />} />
@@ -15,6 +19,7 @@ function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </QueryClientProvider>
   )
 }
 
