@@ -1,5 +1,7 @@
+import LoginForm from "@/component/login-form";
+
 export default function IndexPage() {
   return (
-      <div>index page</div>
+    <LoginForm />
   )
 }

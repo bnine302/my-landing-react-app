@@ -8,6 +8,7 @@ import axios from 'axios'
 
 export default function AddPage() {
   const navigate = useNavigate()
+  // TODO: 초기화(DB에서 불러올 것)
   const [content, setContent] = useState('')
 
   const mutation = useMutation({
@@ -41,13 +42,12 @@ export default function AddPage() {
     {
       label: '랜딩 페이지 html 입력',
       content: (
-        <form onSubmit={handleSubmit} className="space-y-4 p-4">
+        <form onSubmit={handleSubmit} className="flex flex-col h-[calc(100vh-120px)] p-4">
           <textarea
             name="content"
             value={content}
             onChange={handleChange}
-            className="w-full border p-2"
-            rows={10}
+            className="flex-1 w-full border p-2 mb-4"
           />
           <Button type="submit" className="w-full">저장</Button>
         </form>
@@ -58,10 +58,9 @@ export default function AddPage() {
       content: (
         <div 
           dangerouslySetInnerHTML={{ 
-            __html: content // script 동작은 막지만, onclick 등 이벤트는 동작함
-            // __html: DOMPurify.sanitize(content) // link가 동작하지 않음
+            __html: content
           }} 
-          className='p-4 border min-h-72' 
+          className='p-4 border h-[calc(100vh-120px)]'
         />
       ),
     },
