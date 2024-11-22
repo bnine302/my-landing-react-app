@@ -1,3 +1,4 @@
+import { Button } from '@/components/ui/button'
 import { Link } from 'react-router-dom'
 
 export default function IndexPage() {
@@ -5,7 +6,7 @@ export default function IndexPage() {
     <>
       {/* <div>AdminPage</div>
       <Link to="/admin/add">새 항목 추가하기</Link> */}
-      admin IndexPage
+      <Button>버튼</Button>
     </>
   )
 }

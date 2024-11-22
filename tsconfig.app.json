@@ -19,8 +19,15 @@
     "strict": true,
     "noUnusedLocals": false, // true에서 변경
     "noUnusedParameters": false, // true에서 변경
-    "noFallthroughCasesInSwitch": true
+    "noFallthroughCasesInSwitch": true,
     // "noUncheckedSideEffectImports": true
+
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    }
   },
   "include": ["src"]
 }
